@@ -1,0 +1,20 @@
+//Botstrap
+@import './bootstrap/bootstrap.scss';
+
+//Partials
+@import './partials/fonts';
+@import './partials/colors';
+@import './partials/functions';
+@import './partials/variables';
+@import './partials/mixins';
+
+//Bootstrap grid
+@import './partials/grid/grid__functions';
+@import './partials/grid/grid__variables';
+@import './partials/grid/grid__mixins';
+
+//Content
+@import './content/global';
+@import './content/header';
+@import './content/main';
+@import './content/footer';
