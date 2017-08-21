@@ -1,16 +1,8 @@
 var gulp = require('gulp');
 
-var jshint = require('gulp-jshint');
-
 var sass = require('gulp-sass');
 
 var sourcemaps = require('gulp-sourcemaps');
-
-gulp.task('jshint', function() {
-	return gulp.src('js/app.js')
-			.pipe(jshint())
-			.pipe(jshint.reporter('default'));
-});
 
 gulp.task('sass', function() {
 	return gulp.src('scss/main.scss')
@@ -24,7 +16,6 @@ gulp.task('sass', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('js/app.js', ['jshint']);
 	gulp.watch('scss/*.scss', ['sass']);
 	gulp.watch('scss/*/*.scss', ['sass']);
 });

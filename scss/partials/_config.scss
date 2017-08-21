@@ -1,0 +1,44 @@
+$breakpoints: (
+	sm: 576px,
+  	md: 768px,
+  	lg: 992px,
+  	xl: 1200px
+);
+
+@mixin font($weight, $size, $height, $color, $transform) {
+	font: normal normal $weight #{$size}/#{$height} 'Raleway';
+	color: $color;
+	text-transform: $transform;
+}
+
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+}
+
+@mixin link($float, $colorhover) {
+	&:link {
+		opacity: (1 - $float);
+	}
+	&:visited {
+		opacity: (1);
+		text-decoration: none;
+	}
+	&:hover {
+		color: $colorhover;
+		opacity: 1;
+		text-decoration: none;
+	}
+	&:active {
+		opacity: (1 - $float);
+		text-decoration: none;
+	}
+	&:focus {
+		opacity: (1 - $float);
+		text-decoration: none;
+	}
+}
