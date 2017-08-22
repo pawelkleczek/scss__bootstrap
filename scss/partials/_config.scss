@@ -42,3 +42,32 @@ $breakpoints: (
 		text-decoration: none;
 	}
 }
+@mixin nav($after, $before, $content) {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		li {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			@if $after {
+				&:after {
+					content: $content;
+				}
+				&:last-child:after {
+					content: '';
+				}
+			}
+			@if $before {
+				&+&:before {
+					content: $content;
+				}
+			}
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+
+}
